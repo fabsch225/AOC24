@@ -67,11 +67,11 @@ int main() {
     long long tokens = 0;
 
     for (unsigned long i=0; i < as.size(); i++) {
-        auto s = solve(as[i], bs[i], targets[i]);
-        if (as[i].first * s.first + bs[i].first * s.second != targets[i].first || as[i].second * s.first + bs[i].second * s.second != targets[i].second) continue;
-        cout << as[i].first << " * " << s.first << " + " << bs[i].first << " * " << s.second << " = " << targets[i].first << endl;
-        cout << as[i].second << " * " << s.first << " + " << bs[i].second << " * " << s.second << " = " << targets[i].second << endl;
-        tokens += s.first * 3 + s.second ;
+        auto [fst, snd] = solve(as[i], bs[i], targets[i]);
+        if (as[i].first * fst + bs[i].first * snd != targets[i].first || as[i].second * fst + bs[i].second * snd != targets[i].second) continue;
+        cout << as[i].first << " * " << fst << " + " << bs[i].first << " * " << snd << " = " << targets[i].first << endl;
+        cout << as[i].second << " * " << fst << " + " << bs[i].second << " * " << snd << " = " << targets[i].second << endl;
+        tokens += fst * 3 + snd ;
     }
 
     cout << tokens;
